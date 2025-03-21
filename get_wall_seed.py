@@ -4,6 +4,7 @@ import ecdsa
 import bech32
 from Crypto.Hash import RIPEMD160
 from mnemonic import Mnemonic
+from get_seed_key import get_seed
 
 def hmac_sha512(key, data):
     return hmac.new(key, data, hashlib.sha512).digest()
