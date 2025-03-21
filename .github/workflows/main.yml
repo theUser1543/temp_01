@@ -1,0 +1,38 @@
+name: Run get_balance.py
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Update and install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libssl-dev
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+      
+      - name: Install Python dependencies
+        run: |
+          pip install --upgrade pip
+          pip uninstall -y hashlib || true
+          pip install hashlib
+          pip install ecdsa bech32 requests
+          pip install mnemonic bip32 bit pycryptodome cryptography
+      
+      - name: Run get_balance.py
+        run: python get_balance.py
