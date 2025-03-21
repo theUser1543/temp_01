@@ -12,7 +12,7 @@ def get_btc_balance(bech32_address):
 
             return balance_btc  # Return balance as float
         else:
-            return 0.0  # Return 0.0 BTC if API call fails
+            return -1.00  # Return 0.0 BTC if API call fails
     except Exception as e:
         print(f"Error fetching balance: {e}")
         return 0.0  # Ensure function always returns a float
