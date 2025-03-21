@@ -1,4 +1,4 @@
-from get_bal import get get_btc_balance
+from get_bal import get_btc_balance
 from get_wall_seed import generate_wallet
 
 import time,os
