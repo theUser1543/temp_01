@@ -12,7 +12,7 @@ while True:
     bech32_address = wallet_data[0]
     seed_phrase_selected = wallet_data[1]
 
-    print(f"Count : {count}\tGenerated Bech32 Address: {bech32_address}")
+    # print(f"Count : {count}\tGenerated Bech32 Address: {bech32_address}")
     # print(30 * "--")
 
     # # Check balance
@@ -28,8 +28,8 @@ while True:
             print(f"Seed-Phrase : ", seed_phrase_selected)
             break
         else:
-            print("\t❌ Wallet is empty!")
-            print(f"Bitcoin Balance: {btc_balance:.16f} BTC")
+            # print("\t❌ Wallet is empty!")
+            # print(f"Bitcoin Balance: {btc_balance:.16f} BTC")
     else:
         print("\t⚠️ Error fetching balance!")
 
@@ -39,7 +39,7 @@ while True:
     if count > 50:
         count = 0
         os.system('clear')  # Clears the terminal (Linux/Mac)
-        print("\033c", end="")         
+        # print("\033c", end="")         
         # clear_output(wait=True)  # Clears the output
 
     time.sleep(0.1)  # Pause for 300 milliseconds (0.3 seconds)
