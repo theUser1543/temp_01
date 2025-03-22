@@ -27,8 +27,8 @@ def get_seed():
     strength = options[choice]
     new_seed_phrase = mnemo.generate(strength=strength)
 
-    print(30*"--")
-    print("chocie : ",choice)
+    # print(30*"--")
+    # print("chocie : ",choice)
     # print("Seed :",new_seed_phrase)
     # print(f"Available seed phrase length: Chosen-lenght {choice}")
 
