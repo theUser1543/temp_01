@@ -6,10 +6,13 @@ on:
     branches:
       - main
   workflow_dispatch:
+  schedule:
+    - cron: "0 */6 * * *"  # Runs every 6 hours
 
 jobs:
   run-script:
     runs-on: ubuntu-latest
+    timeout-minutes: 350  # 5 hours 50 minutes
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -29,6 +32,8 @@ jobs:
           pip install --upgrade pip
           pip install ecdsa bech32 requests
           pip install mnemonic bip32 bit pycryptodome cryptography
-      
-      - name: Run get_balance.py
+
+      - name: Run get_balance.py with timeout
+        env:
+          MONGO_URL: ${{ secrets.MONGO_URL }}
         run: python get_balance.py
