@@ -27,7 +27,7 @@ while True:
             print(f"{index} - Bitcoin Balance: {btc_balance:.16f} BTC")
             print(f"Seed-Phrase : ", seed_phrase_selected)
             break
-        else:
+        # else:
             # print("\t❌ Wallet is empty!")
             # print(f"Bitcoin Balance: {btc_balance:.16f} BTC")
     else:
